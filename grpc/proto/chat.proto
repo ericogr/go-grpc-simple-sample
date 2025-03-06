@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package chat;
+
+option go_package = "totvs.app/chatpb";
+
+service ChatService {
+  rpc Chat(stream ChatMessage) returns (stream ChatMessage);
+  rpc ServerPush(Empty) returns (stream ChatMessage);
+}
+
+message ChatMessage {
+  string user = 1;
+  string message = 2;
+}
+
+message Empty {}
