@@ -12,6 +12,3 @@ GO := go
 
 run:
 	$(GO) run $(SERVER_SRC) & sleep 1; $(GO) run $(CLIENT_SRC)
-
-clean:
-	rm -f $(SERVER_BIN) $(CLIENT_BIN)
